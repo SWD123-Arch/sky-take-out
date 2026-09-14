@@ -1,4 +1,4 @@
-# 外卖运营管理平台
+# takeout-platform 外卖运营管理平台
 基于SpringBoot + MyBatis + MySQL + Redis + Vue2 的前后端分离外卖管理系统。
 
 ## ✨项目介绍
