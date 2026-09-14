@@ -1,6 +1,21 @@
-**/target/
-.idea
+# IDEA
+.idea/
 *.iml
-*.class
-*Test.java
-**/test/
+*.ipr
+*.iws
+out/
+
+# Maven
+target/
+
+# 日志
+logs/
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 敏感配置！！！
+# 把application.yml里的数据库密码、阿里云密钥放到application-dev.yml，并且忽略dev配置
+src/main/resources/application-dev.yml

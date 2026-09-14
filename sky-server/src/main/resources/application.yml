@@ -57,5 +57,5 @@ sky:
 # ====== ai 顶格！！前面0个空格 ======
 ai:
   base-url: "https://ws-cl05dz23sl0kte8r.cn-beijing.maas.aliyuncs.com/compatible-mode/v1/chat/completions"
-  api-key: "sk-ws-H.PMIPYPY.lFQj.MEUCIQDKBoMpzUYyUVd1OkJFjS-M57gJ9YVqdoFlE2FgSPF23QIgX_m3uFRGZNx5YrZ4EAGb4dSNmxOM7GvLiOWpZoHpO1U"
+  api-key:
   model-name: "qwen3.6-flash"
