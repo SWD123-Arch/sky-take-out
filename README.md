@@ -24,7 +24,8 @@
 3. SpringBoot启动主类
 4. 启动Vue前端项目，Nginx配置前端资源
 
-## 📂项目结构
+```
+## 📂 项目结构
 sky-take-out                 # Maven 父工程
 ├── sky-common               # 公共模块：工具类、全局异常、通用返回结果
 ├── sky-pojo                 # 实体模块：entity、DTO、VO
