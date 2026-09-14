@@ -1,6 +1,5 @@
 server:
   port: 8080
-
 spring:
   profiles:
     active: dev
@@ -12,15 +11,16 @@ spring:
       url: jdbc:mysql://${sky.datasource.host}:${sky.datasource.port}/${sky.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: ${sky.datasource.username}
       password: ${sky.datasource.password}
-
+  redis:
+    host: ${sky.redis.host}
+    port: ${sky.redis.port}
+    password: ${sky.redis.password}
+    database: ${sky.redis.database}
 mybatis:
-  #mapper配置文件
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.sky.entity
   configuration:
-    #开启驼峰命名
     map-underscore-to-camel-case: true
-
 logging:
   level:
     com:
@@ -28,12 +28,34 @@ logging:
         mapper: debug
         service: info
         controller: info
-
 sky:
   jwt:
-    # 设置jwt签名加密时使用的秘钥
     admin-secret-key: itcast
-    # 设置jwt过期时间
     admin-ttl: 7200000
-    # 设置前端传递过来的令牌名称
     admin-token-name: token
+    user-secret-key: itheima
+    user-ttl: 7200000
+    user-token-name: authentication
+  file:
+    upload-dir: D:/waimaixiangmu/waimaixiangmu/sky-take-out/sky-server/src/main/resources/uploads/
+    access-url: http://localhost:8080/uploads
+  wechat:
+    appid: ${sky.wechat.appid}
+    secret: ${sky.wechat.secret}
+    mchid : ${sky.wechat.mchid}
+    mchSerialNo: ${sky.wechat.mchSerialNo}
+    privateKeyFilePath: ${sky.wechat.privateKeyFilePath}
+    apiV3Key: ${sky.wechat.apiV3Key}
+    weChatPayCertFilePath: ${sky.wechat.weChatPayCertFilePath}
+    notifyUrl: ${sky.wechat.notifyUrl}
+    refundNotifyUrl: ${sky.wechat.refundNotifyUrl}
+  shop:
+    address: 北京市海淀区上地十街10号
+  baidu:
+    ak: your-ak
+
+# ====== ai 顶格！！前面0个空格 ======
+ai:
+  base-url: "https://ws-cl05dz23sl0kte8r.cn-beijing.maas.aliyuncs.com/compatible-mode/v1/chat/completions"
+  api-key: "sk-ws-H.PMIPYPY.lFQj.MEUCIQDKBoMpzUYyUVd1OkJFjS-M57gJ9YVqdoFlE2FgSPF23QIgX_m3uFRGZNx5YrZ4EAGb4dSNmxOM7GvLiOWpZoHpO1U"
+  model-name: "qwen3.6-flash"
